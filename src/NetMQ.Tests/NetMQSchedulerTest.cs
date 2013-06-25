@@ -19,7 +19,7 @@ namespace NetMQ.Tests
 
 			using (NetMQContext context = NetMQContext.Create())
 			{
-				using (NetMQScheduler scheduler = new NetMQScheduler(context))
+				using (NetMQScheduler scheduler = new NetMQScheduler())
 				{
 					Task task = new Task(() =>
 					                     	{
@@ -44,7 +44,7 @@ namespace NetMQ.Tests
 
 			using (NetMQContext context = NetMQContext.Create())
 			{
-				using (NetMQScheduler scheduler = new NetMQScheduler(context))
+				using (NetMQScheduler scheduler = new NetMQScheduler())
 				{
 					Task task = new Task(() =>
 					                     	{
@@ -77,7 +77,7 @@ namespace NetMQ.Tests
 			{
 				Poller poller = new Poller();				
 
-				using (NetMQScheduler scheduler = new NetMQScheduler(context, poller))
+				using (NetMQScheduler scheduler = new NetMQScheduler())
 				{
 					Task.Factory.StartNew(poller.Start);
 
@@ -105,7 +105,7 @@ namespace NetMQ.Tests
 
 			using (NetMQContext context = NetMQContext.Create())
 			{
-				using (NetMQScheduler scheduler = new NetMQScheduler(context))
+				using (NetMQScheduler scheduler = new NetMQScheduler())
 				{
 					Task t1 = Task.Factory.StartNew(() =>
 					                                	{
